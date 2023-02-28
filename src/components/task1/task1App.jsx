@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 
 export default function Task1App() {
-  const [counter, setCounter] = useState(0);
+  let [counter, setCounter] = useState(0);
+
+  const handleAdd = () => {
+    if (counter > 4) {
+      counter = -1;
+    }
+    setCounter(counter + 1);
+  };
+  const handleMinus = () => {
+    if (counter < 1) {
+      counter = 6;
+    }
+    setCounter(counter - 1);
+  };
 
   return (
     <div className="container-fluid">
@@ -13,8 +26,13 @@ export default function Task1App() {
             Counter is: <span className="fw-bold text-success"> {counter}</span>
           </h4>
 
-          <button className="btn btn-outline-primary"> +</button>
-          <button className="ms-4 btn btn-primary"> -</button>
+          <button onClick={handleMinus} className="btn btn-outline-primary">
+            {" "}
+            -
+          </button>
+          <button onClick={handleAdd} className="ms-4 btn btn-primary">
+            +
+          </button>
         </div>
       </div>
     </div>
