@@ -90,10 +90,10 @@ export default function Task1App() {
           <select
             onChange={onChangeBg}
             ref={selectRef}
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
           >
-            <option value={color[0]} selected>
+            <option value={color[0]} defaultValue>
               Red
             </option>
             <option value={color[1]}>Green</option>
