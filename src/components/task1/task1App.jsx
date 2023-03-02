@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function Task1App() {
   let [counter, setCounter] = useState(0);
   let [pathIndex, setPath] = useState(0);
+
+  const selectRef = useRef();
   let path = [
     "./images/1.jpg",
     "./images/2.jpg",
     "./images/3.jpg",
     "./images/4.jpg",
   ];
+  let color = ["red", "green", "blue", "yellow"];
+  const [bg, setBg] = useState(color[0]);
+
+  const onChangeBg = () => {
+    setBg(selectRef.current.value);
+  };
 
   return (
     <div className="container-fluid">
       <div className="container">
-        <h1 className="my-5">Task 1 - counter</h1>
+        <h1 className="my-5">Task 1.1 - counter</h1>
 
         <div className="text-center ">
           <h4 className="my-4">
@@ -44,7 +52,7 @@ export default function Task1App() {
         </div>
       </div>
       <div className="container">
-        <h1 className="my-5">Task 2 - images list</h1>
+        <h1 className="my-5">Task 1.2 - images list</h1>
         <div className="text-center ">
           <img className="w-100 rounded-4" src={path[pathIndex]} alt="fffff" />
           <div className="mt-4">
@@ -69,6 +77,29 @@ export default function Task1App() {
               Next
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <h1 className="my-5">Task 1.3 - favorite color</h1>
+        <div className="text-center ">
+          <h3 ref={selectRef} style={{ background: bg }}>
+            {" "}
+            Select favorite color : {bg}
+          </h3>
+          <select
+            onChange={onChangeBg}
+            ref={selectRef}
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option value={color[0]} selected>
+              Red
+            </option>
+            <option value={color[1]}>Green</option>
+            <option value={color[2]}>Blue</option>
+            <option value={color[3]}>Yellow</option>
+          </select>
         </div>
       </div>
     </div>
