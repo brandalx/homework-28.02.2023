@@ -29,7 +29,7 @@ export default function Task2App() {
   return (
     <div className="container-fluid">
       <div className="container">
-        <h1 className="my-5">Task 2.1</h1>
+        <h1 className="my-5">Task 2</h1>
 
         <div className="text-center ">
           <h3>Enter the currency you want to exchange:</h3>
@@ -47,7 +47,12 @@ export default function Task2App() {
             <option value={0.048}>RUB</option>
           </select>
           <h3>Enter the amount you want:</h3>
-          <input onInput={handleInput} ref={inputRef} type="number" />
+          <input
+            className="form-control"
+            onInput={handleInput}
+            ref={inputRef}
+            type="number"
+          />
           <p>It will cost you {formattedCurrency} NIS</p>
         </div>
       </div>
