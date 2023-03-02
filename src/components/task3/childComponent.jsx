@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function ChildComponent(props) {
-  const [color, setColor] = useState("red");
-
   const handleClick = (color) => {
-    setColor(color);
     props.onColorChange(color);
   };
+
   return (
     <div className="conatiner">
       <div className="text-center ">

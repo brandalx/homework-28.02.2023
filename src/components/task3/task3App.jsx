@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ChildComponent from "./childComponent";
 export default function Task3App() {
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState("blue");
 
   const handleColorChange = (color) => {
     setColor(color);
